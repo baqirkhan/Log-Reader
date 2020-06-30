@@ -4,11 +4,13 @@ The application can be interacted with POST API's and response comes back the JS
 
 **INPUT:**
 
-`{
-   "start_date": "2020-01-01T15:41:52.301Z",
-   "end_date": "2020-02-18T07:34:09.451Z",
-   "api_key": "qp0jnJKA78"
- }`
+<pre>
+{
+    "start_date": "2020-01-01T15:41:52.301Z",
+    "end_date": "2020-02-18T07:34:09.451Z",
+    "api_key": "qp0jnJKA78"
+ }
+</pre>
 
 1. **start_date**: Takes start date in *ISO 8601 forma*t as given in the log file.
 2. **end_date**: Takes end date in _ISO 8601 format_ as given in the log
@@ -17,7 +19,8 @@ The application can be interacted with POST API's and response comes back the JS
 
 OUTPUT:
 
-`{
+<pre>
+{
    "start_date": "2020-01-01T15:41:52.301Z",
    "end_date": "2020-02-18T07:34:09.451Z",
    "logs_count": 96172,
@@ -29,7 +32,13 @@ OUTPUT:
      {
        "time": "2020-01-01T15:42:28.385Z",
        "message": "Querying table customers"
-     },`
+     },
+     ...
+     ..
+     .
+     ]
+ }
+</pre>
 
 Project requires `Python 3.6 or above`. To check if you have it, please run:
     `python3.6` on terminal. After installing it, please follow the instructions:
