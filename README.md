@@ -40,6 +40,11 @@ OUTPUT:
  }
 </pre>
 
+1. **start_date**: Same as input
+2. **end_date**: Same as output
+3. **logs_count**: Total number of logs in the given range
+4. **logs**: Array of dictionaries, where each element has log message and timestamp
+
 Project requires `Python 3.6 or above`. To check if you have it, please run:
     `python3.6` on terminal. After installing it, please follow the instructions:
 
@@ -71,3 +76,5 @@ Project requires `Python 3.6 or above`. To check if you have it, please run:
        "end_date": "2020-02-18T07:34:09.451Z",
        "api_key": "qp0jnJKA78"
      }'`
+     
+The application uses asyncio, therefore, requests from multiple clients can be served asynchronously.
