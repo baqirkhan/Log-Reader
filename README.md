@@ -1,5 +1,4 @@
 # Log-Reader
-<hr>
 
 **Strategy:**
 
