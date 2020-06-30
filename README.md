@@ -1,4 +1,22 @@
 # Log-Reader
+<hr>
+
+**Strategy:**
+
+Since the Log file is very large, therefore, _pre-processing_ it and making an index like structure will be efficient. To do that, we can create
+a dictionary where `key` contains the _line number_ and `value` contains _offset_ of that line in bytes from starting.
+In this way, given any line number, we can find its position in the file and read the line in **O(1)** time as dictionaries are nothing but _hashmap_.  
+
+If we are given _1 TB_ large Log file, then its index dictionary will not be more than _100MB_ since it only contains key/value pairs, where both are integers.
+Once the request comes, we perform **binary search** using _start_date_ as target value and find the line number from where we have 
+to start reading the logs. This process will take **O(log(n**)) time where **n** is the _number of lines_ in the log file.
+
+Now that we have starting line number from where we have to read logs, we can read line by line sequentially without bringing the entire file
+in memory and append our results into the array.
+
+<hr>
+
+**Input/Output Description:**
 
 The application can be interacted with POST API's and response comes back the JSON. The input/output format is as follow:
 
@@ -12,7 +30,7 @@ The application can be interacted with POST API's and response comes back the JS
  }
 </pre>
 
-1. **start_date**: Takes start date in *ISO 8601 forma*t as given in the log file.
+1. **start_date**: Takes start date in _ISO 8601 format_ as given in the log file.
 2. **end_date**: Takes end date in _ISO 8601 format_ as given in the log
 3. **api_key**: API key is just their for authentication purpose, copy the same api key in all requests
 
@@ -44,6 +62,10 @@ OUTPUT:
 2. **end_date**: Same as output
 3. **logs_count**: Total number of logs in the given range
 4. **logs**: Array of dictionaries, where each element has log message and timestamp
+
+<hr>
+
+**Installation steps:**
 
 Project requires `Python 3.6 or above`. To check if you have it, please run:
     `python3.6` on terminal. After installing it, please follow the instructions:
