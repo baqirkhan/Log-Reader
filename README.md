@@ -6,7 +6,7 @@ Since the Log file is very large, therefore, _pre-processing_ it and making an i
 a dictionary where `key` contains the _line number_ and `value` contains _offset_ of that line in terms of bytes from starting.
 In this way, given any line number, we can find its position in the file and read the line in **O(1)** time as dictionaries are nothing but _hashmap_.  
 
-If we are given _1 TB_ large Log file, then its index dictionary will not be more than _100MB_ since it only contains key/value pairs, where both are integers.
+If we are given _1 TB_ large Log file, then its index dictionary will not be more than _100MB_ since it only contains key/value pairs for every line and both are integers.
 Once the request comes, we perform **binary search** using _start_date_ as target value and find the line number from where we have 
 to start reading the logs. This process will take **O(log(n**)) time where **n** is the _number of lines_ in the log file.
 
