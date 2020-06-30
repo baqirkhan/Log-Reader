@@ -13,6 +13,7 @@ to start reading the logs. This process will take **O(log(n**)) time where **n**
 Now that we have starting line number from where we have to read logs, we can read line by line sequentially without bringing the entire file
 in memory and append our results into the array.
 
+So essentially, every request is served in **min(O(log(n)), O(r))**, where **r** is number of lines in the given range(End Date - Start Date) & **n** is number of lines in the log file.
 <hr>
 
 **Input/Output Description:**
